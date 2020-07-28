@@ -1,10 +1,15 @@
-import React from "react";
+import React, {Component} from "react";
 
-export function Card() {
-	const cardTitles = ["Title1", "Title2", "Title3", "Title4"];
+export class Card extends Component() {
 
-	const cardList = cardTitles.map(function(cards, index) {
-		return (
+    constructor(){
+        super();
+        this.cardTitles = ["Title1", "Title2", "Title3", "Title4"]; //property
+    }
+      
+    render() {
+            const cardList = cardTitles.map(function(cards, index) {
+                return (
 			<div key={index} className="card mx-3" style={{ width: "18rem" }}>
 				<img
 					src="https://coder.clothing/images/stories/virtuemart/product/reactjs-logo-sticker.jpg"
@@ -26,4 +31,4 @@ export function Card() {
 	});
 
 	return <div className="d-flex justify-content-around">{cardList}</div>;
-}
+
